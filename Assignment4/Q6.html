@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Survey Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; padding: 20px;">
+
+  <h1 style="text-align: center; color: #4caf50;">Health Survey Form</h1>
+
+  <form action="/submit-survey" method="post" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 10px; padding: 20px; max-width: 500px; margin: 0 auto;">
+    
+    <label for="name" style="font-weight: bold;">Name:</label><br>
+    <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+   
+    <label for="age" style="font-weight: bold;">Age:</label><br>
+    <input type="number" id="age" name="age" min="0" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label style="font-weight: bold;">Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other" required>
+    <label for="other">Other</label><br><br>
+
+   
+    <label for="height" style="font-weight: bold;">Height (cm):</label><br>
+    <input type="number" id="height" name="height" min="0" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+   
+    <label for="weight" style="font-weight: bold;">Weight (kg):</label><br>
+    <input type="number" id="weight" name="weight" min="0" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+   
+    <label style="font-weight: bold;">Lifestyle Questions:</label><br>
+    <input type="checkbox" id="smoking" name="lifestyle" value="smoking">
+    <label for="smoking">Smoking</label><br>
+    <input type="checkbox" id="alcohol" name="lifestyle" value="alcohol">
+    <label for="alcohol">Alcohol Consumption</label><br>
+    <input type="checkbox" id="exercise" name="lifestyle" value="exercise">
+    <label for="exercise">Regular Exercise</label><br>
+    <input type="checkbox" id="balanced-diet" name="lifestyle" value="balanced-diet">
+    <label for="balanced-diet">Balanced Diet</label><br><br>
+
+   
+    <label for="diet" style="font-weight: bold;">Dietary Preference:</label><br>
+    <select id="diet" name="diet" required style="width: 100%; padding: 10px; margin: 5px 0;">
+      <option value="">Select an option</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="non-vegetarian">Non-Vegetarian</option>
+      <option value="vegan">Vegan</option>
+    </select><br><br>
+
+    
+    <label for="activity" style="font-weight: bold;">Activity Level:</label><br>
+    <select id="activity" name="activity" required style="width: 100%; padding: 10px; margin: 5px 0;">
+      <option value="">Select an option</option>
+      <option value="sedentary">Sedentary</option>
+      <option value="moderate">Moderate</option>
+      <option value="active">Active</option>
+    </select><br><br>
+
+   
+    <label for="health-concerns" style="font-weight: bold;">Optional Health Concerns:</label><br>
+    <textarea id="health-concerns" name="health-concerns" rows="4" cols="50" placeholder="Describe any health concerns..." style="width: 100%; padding: 10px; margin: 5px 0;"></textarea><br><br>
+
+   
+    <button type="submit" style="background-color: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit Survey</button>
+  </form>
+
+</body>
+</html>

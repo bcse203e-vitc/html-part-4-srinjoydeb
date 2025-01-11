@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Booking Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; padding: 20px;">
+
+  <h1 style="text-align: center; color: #4caf50;">Travel Booking Form</h1>
+
+  <form action="/submit-booking" method="post" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 10px; padding: 20px; max-width: 500px; margin: 0 auto;">
+   
+    <label for="full-name" style="font-weight: bold;">Full Name:</label><br>
+    <input type="text" id="full-name" name="full-name" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label for="contact-info" style="font-weight: bold;">Contact Information:</label><br>
+    <input type="email" id="contact-info" name="contact-info" placeholder="example@domain.com" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+  
+    <label for="destination" style="font-weight: bold;">Destination:</label><br>
+    <select id="destination" name="destination" required style="width: 100%; padding: 10px; margin: 5px 0;">
+      <option value="">Select a destination</option>
+      <option value="paris">Paris</option>
+      <option value="new-york">New York</option>
+      <option value="tokyo">Tokyo</option>
+      <option value="london">London</option>
+    </select><br><br>
+
+ 
+    <label for="travel-dates" style="font-weight: bold;">Travel Dates:</label><br>
+    <input type="date" id="travel-dates" name="travel-dates" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label for="num-travelers" style="font-weight: bold;">Number of Travelers:</label><br>
+    <input type="number" id="num-travelers" name="num-travelers" min="1" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label style="font-weight: bold;">Travel Class:</label><br>
+    <input type="radio" id="economy" name="travel-class" value="economy" required>
+    <label for="economy">Economy</label><br>
+    <input type="radio" id="business" name="travel-class" value="business" required>
+    <label for="business">Business</label><br>
+    <input type="radio" id="first-class" name="travel-class" value="first-class" required>
+    <label for="first-class">First Class</label><br><br>
+
+ 
+    <label for="insurance" style="font-weight: bold;">Travel Insurance:</label>
+    <input type="checkbox" id="insurance" name="insurance">
+    <label for="insurance">Opt for travel insurance</label><br><br>
+
+    
+    <label for="total-cost" style="font-weight: bold;">Total Cost:</label><br>
+    <input type="text" id="total-cost" name="total-cost" placeholder="Calculate manually" readonly style="width: 100%; padding: 10px; margin: 5px 0; background-color: #f0f0f0;"><br><br>
+    
+    <p style="color: #d9534f; font-weight: bold;">Note: Total cost = Number of Travelers × Class Price. Example:</p>
+    <ul style="color: #555;">
+      <li>Economy: $500 per person</li>
+      <li>Business: $1000 per person</li>
+      <li>First Class: $2000 per person</li>
+      <li>If you select insurance, add $100.</li>
+    </ul><br>
+
+   
+    <button type="submit" style="background-color: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit Booking</button>
+  </form>
+
+</body>
+</html>

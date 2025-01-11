@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Form Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        #previewForm {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .field-item {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customizable Form Template</h1>
+    <form id="formBuilder">
+        <label for="formName">Form Name:</label>
+        <input type="text" id="formName" placeholder="Enter form name" required>
+
+        <label for="numFields">Number of Input Fields:</label>
+        <input type="number" id="numFields" min="1" value="1" required>
+
+        <label for="fieldTypes">Field Types (Select for each):</label>
+        <div id="fieldContainer">
+            <div class="field-item">
+                <select class="fieldType" required>
+                    <option value="text">Text</option>
+                    <option value="email">Email</option>
+                    <option value="number">Number</option>
+                    <option value="date">Date</option>
+                </select>
+                <input type="text" class="fieldLabel" placeholder="Enter field label" required>
+            </div>
+        </div>
+
+        <button type="button" id="generateForm">Generate Form Preview</button>
+    </form>
+
+    <div id="previewForm">
+        <h2>Form Preview</h2>
+        <form id="customForm"></form>
+    </div>
+
+    <script>
+        document.getElementById('numFields').addEventListener('input', function () {
+            const numFields = parseInt(this.value);
+            const fieldContainer = document.getElementById('fieldContainer');
+            fieldContainer.innerHTML = ''; // Clear existing fields
+
+            for (let i = 0; i < numFields; i++) {
+                const fieldDiv = document.createElement('div');
+                fieldDiv.className = 'field-item';
+                fieldDiv.innerHTML = `
+                    <select class="fieldType" required>
+                        <option value="text">Text</option>
+                        <option value="email">Email</option>
+                        <option value="number">Number</option>
+                        <option value="date">Date</option>
+                    </select>
+                    <input type="text" class="fieldLabel" placeholder="Enter field label" required>
+                `;
+                fieldContainer.appendChild(fieldDiv);
+            }
+        });
+
+        document.getElementById('generateForm').addEventListener('click', function () {
+            const formName = document.getElementById('formName').value;
+            const fieldTypes = document.querySelectorAll('.fieldType');
+            const fieldLabels = document.querySelectorAll('.fieldLabel');
+            const previewForm = document.getElementById('customForm');
+
+            previewForm.innerHTML = `<h3>${formName}</h3>`;
+
+            fieldTypes.forEach((fieldType, index) => {
+                const label = document.createElement('label');
+                label.textContent = fieldLabels[index].value;
+
+                const input = document.createElement('input');
+                input.type = fieldType.value;
+
+                const fieldDiv = document.createElement('div');
+                fieldDiv.className = 'field-item';
+                fieldDiv.appendChild(label);
+                fieldDiv.appendChild(input);
+
+                previewForm.appendChild(fieldDiv);
+            });
+
+            const submitButton = document.createElement('button');
+            submitButton.type = 'submit';
+            submitButton.textContent = 'Submit';
+            previewForm.appendChild(submitButton);
+        });
+    </script>
+</body>
+</html>

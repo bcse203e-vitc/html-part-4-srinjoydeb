@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; padding: 20px;">
+
+  <h1 style="text-align: center; color: #4caf50;">Hotel Booking Form</h1>
+
+  <form action="/submit-booking" method="post" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 10px; padding: 20px; max-width: 500px; margin: 0 auto;">
+    
+    <label for="name" style="font-weight: bold;">Name:</label><br>
+    <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label for="contact" style="font-weight: bold;">Contact Info:</label><br>
+    <input type="email" id="contact" name="contact" placeholder="example@domain.com" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label for="checkin" style="font-weight: bold;">Check-in Date:</label><br>
+    <input type="date" id="checkin" name="checkin" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label for="checkout" style="font-weight: bold;">Check-out Date:</label><br>
+    <input type="date" id="checkout" name="checkout" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label for="guests" style="font-weight: bold;">Number of Guests:</label><br>
+    <input type="number" id="guests" name="guests" min="1" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+    
+    <label for="room-type" style="font-weight: bold;">Room Type:</label><br>
+    <select id="room-type" name="room-type" required style="width: 100%; padding: 10px; margin: 5px 0;">
+      <option value="">Select Room Type</option>
+      <option value="single">Single</option>
+      <option value="double">Double</option>
+      <option value="suite">Suite</option>
+    </select><br><br>
+
+    
+    <label style="font-weight: bold;">Additional Services:</label><br>
+    <input type="checkbox" id="breakfast" name="services" value="breakfast">
+    <label for="breakfast">Breakfast</label><br>
+    <input type="checkbox" id="airport-pickup" name="services" value="airport-pickup">
+    <label for="airport-pickup">Airport Pickup</label><br><br>
+
+
+    <label for="total-cost" style="font-weight: bold;">Total Cost:</label><br>
+    <input type="text" id="total-cost" placeholder="Calculate manually" readonly style="width: 100%; padding: 10px; margin: 5px 0; background-color: #f0f0f0;"><br><br>
+    <p style="color: #d9534f; font-weight: bold;">Note: Total cost = Base room cost + Additional services × Number of guests. Example:</p>
+    <ul style="color: #555;">
+      <li>Single Room: $100/night</li>
+      <li>Double Room: $150/night</li>
+      <li>Suite: $300/night</li>
+      <li>Breakfast: $20/person</li>
+      <li>Airport Pickup: $50</li>
+    </ul><br>
+
+
+    <button type="submit" style="background-color: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Book Now</button>
+  </form>
+
+</body>
+</html>

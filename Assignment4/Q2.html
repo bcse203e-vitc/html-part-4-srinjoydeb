@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Registration Form</title>
+</head>
+<body>
+<h1>Event Registration</h1>
+<form action="/register" method="post">
+      
+<label for="full-name">Full Name:</label><br>
+<input type="text" id="full-name" name="full-name" required><br><br>
+
+        
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" placeholder="abc@domain.com" required><br><br>
+
+        
+<label for="phone-number">Phone Number:</label><br>
+<input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{10}" placeholder="91xxxxxxxx" required><br><br>
+
+       
+<label>Gender:</label><br>
+<input type="radio" id="male" name="gender" value="Male" required>
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="gender" value="Female" required>
+<label for="female">Female</label><br><br>
+
+       
+<label for="age-group">Age Group:</label><br>
+<select id="age-group" name="age-group" required>
+<option value="" disabled selected>Select your age group</option>
+<option value="under-18">Under 18</option>
+<option value="18-25">18-25</option>
+<option value="26-35">26-35</option>
+<option value="36-50">36-50</option>
+<option value="above-50">Above 50</option>
+</select><br><br>
+
+        
+<label>Topics of Interest:</label><br>
+<input type="checkbox" id="topic1" name="topics" value="Technology">
+<label for="topic1">Technology</label><br>
+<input type="checkbox" id="topic2" name="topics" value="Science">
+<label for="topic2">Science</label><br>
+<input type="checkbox" id="topic3" name="topics" value="Art">
+<label for="topic3">Art</label><br>
+<input type="checkbox" id="topic4" name="topics" value="Business">
+<label for="topic4">Business</label><br>
+<input type="checkbox" id="topic5" name="topics" value="Other">
+<label for="topic5">Other</label><br><br>
+
+       
+<label for="comments">Additional Comments:</label><br>
+<textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter any additional information here..."></textarea><br><br>
+
+        
+<button type="submit">Register</button>
+</form>
+</body>
+</html>
