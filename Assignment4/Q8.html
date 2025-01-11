@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Quiz Submission Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f0f8ff; color: #333; padding: 20px;">
+
+  <h1 style="text-align: center; color: #403baf;">Online Quiz Submission Form</h1>
+
+  <form action="/submit-quiz" method="post" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 10px; padding: 20px; max-width: 500px; margin: 0 auto;">
+    
+   
+    <label for="name" style="font-weight: bold;">Name:</label><br>
+    <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+   
+    <label for="email" style="font-weight: bold;">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="example@domain.com" required style="width: 100%; padding: 10px; margin: 5px 0;"><br><br>
+
+   
+    <label style="font-weight: bold;">Question 1: What is the capital of France?</label><br>
+    <input type="radio" id="paris" name="q1" value="paris" required>
+    <label for="paris">Paris</label><br>
+    <input type="radio" id="london" name="q1" value="london">
+    <label for="london">London</label><br>
+    <input type="radio" id="berlin" name="q1" value="berlin">
+    <label for="berlin">Berlin</label><br><br>
+
+  
+    <label style="font-weight: bold;">Question 2: Select the primary colors:</label><br>
+    <input type="checkbox" id="red" name="q2" value="red">
+    <label for="red">Red</label><br>
+    <input type="checkbox" id="blue" name="q2" value="blue">
+    <label for="blue">Blue</label><br>
+    <input type="checkbox" id="green" name="q2" value="green">
+    <label for="green">Green</label><br><br>
+
+   
+    <label style="font-weight: bold;">Question 3: Who developed the theory of relativity?</label><br>
+    <input type="radio" id="einstein" name="q3" value="einstein" required>
+    <label for="einstein">Albert Einstein</label><br>
+    <input type="radio" id="newton" name="q3" value="newton">
+    <label for="newton">Isaac Newton</label><br><br>
+
+   
+    <label style="font-weight: bold;">Time Remaining:</label><br>
+    <input type="text" id="timer" placeholder="00:30" style="width: 100%; padding: 10px; margin: 5px 0; background-color: #f0f0f0;" readonly><br><br>
+
+    
+    <button type="submit" style="background-color: #4caf50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit Quiz</button>
+  </form>
+
+</body>
+</html>
